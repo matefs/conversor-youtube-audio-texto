@@ -4,9 +4,9 @@ app = FastAPI()
 
 
 @app.get("/")
-def raiz(request: Request):
-    nome = request.query_params.get("nome")
-    if nome is not None:
-        return {"mensagem": f"Olá, {nome}!"}
+async def raiz(request: Request):
+    video_url = request.query_params.get("video_url")
+    if video_url is not None:
+        return {"video_url": f"{video_url}!"}
     else:
-        return {"mensagem": "Por favor informe uma url"}
+        return {"mensagem": "Por favor, informe uma URL do YouTube no parâmetro /?video_url="}
