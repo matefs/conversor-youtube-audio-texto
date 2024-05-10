@@ -3,6 +3,7 @@ import pytube as pt
 import os
 
 app = FastAPI()
+# Todo: deal with age restricted videos. Ex: https://www.youtube.com/watch?v=hsZVlDQEwnI
 
 
 @app.get("/")
